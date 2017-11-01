@@ -84,10 +84,6 @@ function timer() {
     $starttimer.find(".second").text(second);
 }
 
-
-
-
-
 //对比两张卡牌
 function matchcard(card, array) {
     if (array.length >= 2) {
