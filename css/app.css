@@ -91,8 +91,9 @@ h1 {
     animation: rot .2s ease 1;
 }
 
-.deck .card.show {
-    font-size: 33px;
+.deck .card.show i {
+    display: block;
+
 }
 
 .deck .card.match {
@@ -111,6 +112,9 @@ h1 {
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
+    font-size: 33px;
+    display: none;
+
     -webkit-font-smoothing: antialiased;
 
 }

@@ -170,12 +170,15 @@ function getstarlength(stars) {
     })
 }
 
-window.onload = function(){
+
+
+setTimeout(function(){
     //调用倒计时
     timeout(10);
 //默认展示
     starshow();
-}
+},1000)
+
 
 
 /*
