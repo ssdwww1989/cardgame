@@ -37,7 +37,7 @@ function resetCard(rescard) {
 function timeout(cts){
          counttime = setInterval(function(){
              cts--;
-             console.log(cts)
+
              $(".counttime em").text(cts);
              if(cts == 0){
                  clearInterval(counttime);
