@@ -54,10 +54,7 @@ function timeout(cts){
 function starshow() {
     $(".deck li").addClass("open show")
 }
-//调用倒计时
-timeout(10);
-//默认展示
-starshow();
+
 
 //游戏开始计时器
 
@@ -171,6 +168,13 @@ function getstarlength(stars) {
             starsnew = stars;
         }
     })
+}
+
+window.onload = function(){
+    //调用倒计时
+    timeout(10);
+//默认展示
+    starshow();
 }
 
 
