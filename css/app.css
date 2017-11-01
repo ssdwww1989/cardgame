@@ -1,0 +1,290 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.counttime{
+    font-style: normal;
+    padding-left: 50px;
+}
+.counttime em{
+    font-style: normal;
+    font-weight: bold;
+}
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+
+
+
+
+.deck .card {
+
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    animation: rot .2s ease 1;
+
+    background: #02b3e4;
+    cursor: default;
+}
+.deck .card.open i{
+    animation: rot .2s ease 1;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    animation: rubberBand .6s ease 1;
+    animation-delay: .1s;
+    background: #02ccba;
+    font-size: 33px;
+
+
+
+}
+.card  i{
+
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+}
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+/*modify bu chenliang*/
+
+.fa-repeat-ani{
+    transform: rotate(360deg);
+    transition: .3s ;
+
+}
+.error{
+    background: #EE3D3D  !important;
+
+    animation: wobble .6s ease 1 !important;
+
+
+}
+.cradhide{
+    animation: rot2 .4s ease 1 !important;
+}
+
+@keyframes rot2 {
+
+    from{  transform: rotateY(180deg);}
+    to{ transform: rotateY(0deg) }
+
+}
+
+
+@keyframes rot {
+
+from{  transform: rotateY(0deg);}
+    to{ transform: rotateY(-180deg) }
+
+}
+
+@keyframes rubberBand {
+    from {
+
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, .95, 1);
+    }
+
+    to {
+
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+
+@keyframes wobble {
+    from {
+        transform: none;
+    }
+
+    15% {
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+
+    30% {
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+
+    45% {
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    to {
+        transform: none;
+    }
+}
+.congratulations-wrapper{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 50px;
+
+    font-family: 'Coda', cursive;
+    min-width: 1200px;
+}
+.congratulations-wrapper h1{
+    font-size: 26px;
+    color: #4c4b4d;
+    font-weight: bold;
+}
+.congratulations-wrapper p{
+    font-size: 16px;
+    color: #838283;
+    font-family: Arial;
+    letter-spacing: 1px;
+}
+.congratulations-wrapper em,.congratulations-wrapper i{
+    font-style: normal;
+    padding: 0px 5px;
+}
+.congratulations-wrapper a{
+    display: inline-block;
+    margin-top: 50px;
+    background-color: #00b8a9;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 6px;
+}
+.ckimg{
+
+}
+.ckimg{
+    display: block;
+    margin: auto;
+}
+.starttimer{
+    display: none;
+    padding-left: 50px;
+}
+.starttimer em{
+    font-style: normal;
+    font-weight: bold;
+    width: 30px;
+    text-align: center;
+    display: inline-block;
+}
+
