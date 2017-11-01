@@ -12,12 +12,9 @@
 <body>
 
 
-
-
-
 <div class="congratulations-wrapper">
 
-    <p class="ckimg"><img src="img/cons.png"> </p>
+    <p class="ckimg"><img src="img/cons.png"></p>
 
     <h1>Congratulations! You Won!</h1>
     <p>With<em class="cmoves"></em>Moves and <i class="cstar"></i>Stars</p>
@@ -28,36 +25,20 @@
 </div>
 
 
-<div id="s"></div>
-
-
 <script type="text/javascript">
-
-    window.onload = function(){
+    window.onload = function () {
         console.log(window.location.href);
         url = window.location.href.split('?')[1];
         url2 = window.location.href.split('?')[2];
+        convert("cmoves", url)
+        convert("cstar", url2)
 
-
-        convert("cmoves",url)
-        convert("cstar",url2)
-
-        function convert(tag,ele){
-            var optv=ele.replace(/[^0-9]/g,'');
+        function convert(tag, ele) {
+            var optv = ele.replace(/[^0-9]/g, '');
             console.log(optv)
-            $("."+tag).text(optv)
+            $("." + tag).text(optv)
         }
     }
-
-
-
-
-
-
-
-
-       // document.getElementById("s").innerHTML=window.location.split('?')[1];
-
 </script>
 
 </body>
