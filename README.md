@@ -1,7 +1,7 @@
 
 ![](https://github.com/ssdwww1989/cardgame/blob/master/img/Gamelogo.png)
 
-记忆翻牌游戏
+######记忆翻牌游戏
 [![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/filp/whoops.svg)]()
 
 该项目为优达学城P1项目，其中包含 随机翻牌，点开两张卡片并且对比两张卡片否一致，如果不一致则翻转，如果一致则保留，当所有卡片均匹配上的时候 跳转到胜利页面等功能！！该项目目前还有很多有待优化的地方，只是勉强实现了基本运行功能，后期我会逐步迭代
