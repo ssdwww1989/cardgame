@@ -28,9 +28,7 @@ function resetCard(rescard) {
     arr = shuffle(arr);
     var list = "";
     for (let i = 0; i < arr.length; i++) {
-        /*var arrindex = index;
-        var customfc = arrindex.toString();*/
-        list += '<li class="card" ><i class="' + arr[i] + '"></i></li>'; //还需要改 去掉双引号
+        list += `<li class="card"><i class="${arr[i]}"></i></li>`; //使用es6 模板字符串  get
     }
     document.getElementById(rescard).innerHTML += list;
 }
@@ -59,14 +57,13 @@ function starshow() {
 
 
 //游戏开始计时器
-
-function start() //开始
-{
+//开始
+function start() {
     starttimer = setInterval(timer, 50);
 }
 
-function timer() //计时
-{
+//计时
+function timer() {
     millisecond = millisecond + 50;
     if (millisecond >= 1000) {
         millisecond = 0;
@@ -81,12 +78,14 @@ function timer() //计时
         hour = hour + 1;
     }
 
-
     var $starttimer = $(".starttimer")
 
     $starttimer.find(".minute").text(minute);
     $starttimer.find(".second").text(second);
 }
+
+
+
 
 
 //对比两张卡牌
@@ -98,10 +97,12 @@ function matchcard(card, array) {
             $("." + card).parent().addClass("match").removeClass("open show");
             var le = $(".deck .match").length; //检查有多个match
             if (le == 16) { //检查match是否相等
+                var endminu = $(".minute").text();//获取耗时分
+                var endsec = $(".second").text();//获取耗时秒
                 getstarlength(starsnew); //调用检查星星的方法
                 window.clearInterval(starttimer) //清除计时器
                 setTimeout(function() {
-                    window.location.href = "Congratulation.html?mo=" + count + "?sta=" + starsnew;
+                    window.location.href = "Congratulation.html?mo=" + count + "?sta=" + starsnew+"?min"+endminu+"?sec"+endsec;
                 }, 400)
             } //检查有多个match
             //清空数组
@@ -172,8 +173,6 @@ function getstarlength(stars) {
         }
     })
 }
-
-
 
 setTimeout(function() {
     //调用倒计时

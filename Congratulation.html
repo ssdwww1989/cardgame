@@ -11,34 +11,34 @@
 </head>
 <body>
 
-
 <div class="congratulations-wrapper">
-
     <p class="ckimg"><img src="img/cons.png"></p>
-
     <h1>Congratulations! You Won!</h1>
+    <p>Total Time:<em class="min"></em>Minute<em class="sec"></em>Second </p>
     <p>With<em class="cmoves"></em>Moves and <i class="cstar"></i>Stars</p>
     <p>Woooooo!</p>
 
-    <a href="index.html" target="_blank">Play again</a>
+    <a href="index.html">Play again</a>
 
 </div>
 
 
 <script type="text/javascript">
-    window.onload = function () {
-        console.log(window.location.href);
-        url = window.location.href.split('?')[1];
-        url2 = window.location.href.split('?')[2];
-        convert("cmoves", url)
-        convert("cstar", url2)
-
-        function convert(tag, ele) {
-            var optv = ele.replace(/[^0-9]/g, '');
-            console.log(optv)
-            $("." + tag).text(optv)
-        }
+    //获取url
+    function geturl(index){
+        var lkr = window.location.href.split('?')[index];
+        return lkr;
     }
+    //replace 非数字字符串
+    function convert(tag, ele) {
+        var optv = ele.replace(/[^0-9]/g, '');
+        $("." + tag).text(optv)//写入对应的dom
+    }
+    convert("cmoves", geturl(1))
+    convert("cstar", geturl(2));
+    convert("min", geturl(3));
+    convert("sec", geturl(4));
+
 </script>
 
 </body>
