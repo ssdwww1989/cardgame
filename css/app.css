@@ -292,4 +292,24 @@ from{  transform: rotateY(0deg);}
     text-align: center;
     display: inline-block;
 }
+@media only screen and (max-width: 600px) {
+    .congratulations-wrapper{
+        width: 600px;
+        min-width: 600px;
+    }
+    .deck .card {
+        height: 80px;
+        width: 80px;
+    }
+
+    .deck {
+
+        width: 400px;
+        min-height: 400px;
+    }
+    .score-panel{
+        width: 400px;
+    }
+
+}
 
